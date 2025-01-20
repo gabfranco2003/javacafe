@@ -1,0 +1,25 @@
+{% extends 'cafe/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mt-5">Our Menu</h1>
+    
+    {% for category, items in grouped_items.items %}
+        <h2 class='mt-5'>{{ category|title }}</h2>
+        <div class="row">
+            {% for item in items %}
+                <div class="col-md-4 mb-4">
+                    <a href="{% url 'menu_item_detail' item.id %}" class="card bg-dark">
+                        <!-- Use the image URL directly here -->
+                        <img src="{{ item.image }}" alt="{{ item.name }}" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title text-light">{{ item.name }}</h5>
+                            <p class="card-text text-light">${{ item.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
