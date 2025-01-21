@@ -1,8 +1,54 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #878e90;
 }
 
 .swiper-container {
     margin-bottom: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Ensures that the image within the card is a square */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* This maintains a square aspect ratio */
+    overflow: hidden; /* Ensures that the image doesn't overflow */
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Ensures that the card body takes up the remaining space */
+.card-body {
+    flex-grow: 1;
+}
+
+
+.review-form textarea {
+    width: 100%;
+    height: 150px;
+}
+
+.reviews .review {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.reviews .review h5 {
+    margin: 0;
 }

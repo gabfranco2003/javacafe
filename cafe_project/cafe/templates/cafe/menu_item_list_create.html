@@ -1,0 +1,17 @@
+<!-- menu_item_list_create.html -->
+<h1>Menu Items</h1>
+
+<!-- List of menu items -->
+<ul>
+  {% for item in menu_items %}
+    <li>{{ item.name }} - ${{ item.price }}</li>
+  {% endfor %}
+</ul>
+
+<!-- Form to create a new menu item -->
+<h2>Create a New Menu Item</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create Menu Item</button>
+</form>

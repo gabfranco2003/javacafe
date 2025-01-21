@@ -25,8 +25,15 @@ SECRET_KEY = 'django-insecure-xy$9(i6_k#i)o20rs)tf=u)pkdr!nih-@@)tkp%i9@2__kjrq6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
+SITE_ID = 1
+
+REST_USE_JWT = True  # Use JWT for authentication (if needed)
+
+# Redirect URLs for dj_rest_auth
+LOGIN_REDIRECT_URL = '/'  # Or wherever you want to redirect after login
+LOGOUT_REDIRECT_URL = '/'  # Or wherever you want to redirect after logout
 
 # Application definition
 
@@ -37,8 +44,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cafe',
+
+    # Add django.contrib.sites here for allauth
+    'django.contrib.sites',  # This is required for allauth to work properly
+
+    'rest_framework',
+    
+    # Allauth and related apps for authentication
+    'allauth',
+    'allauth.account',
+    'dj_rest_auth',  # Use dj_rest_auth instead of rest_auth
+    'rest_framework.authtoken',  # Token authentication support for DRF
+    
+    # Your app
+    'cafe',  # Your app (make sure it's listed here)
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'cafe_project.urls'
@@ -117,6 +139,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# For collecting static files into a single directory (used for production)
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

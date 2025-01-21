@@ -3,6 +3,66 @@
 {% block content %}
 <div class="container mt-4">
     <h1>About Us</h1>
-    <p>Welcome to our cafe! We offer the best coffee, pastries, sandwiches, and more. Join us for a cozy experience.</p>
+    
+    <!-- Introduction Section -->
+    <p>Welcome to Java Cafe, where we serve the best coffee, freshly baked pastries, sandwiches, and more. Our cafe is more than just a place to grab a quick coffee—it's a cozy spot where you can relax, meet with friends, or get some work done. Join us for a unique experience that combines quality, warmth, and hospitality.</p>
+
+    <!-- Our Story Section -->
+    <div class="mt-5">
+        <h2>Our Story</h2>
+        <p>Founded in 2010, Java Cafe started with a simple mission: to offer high-quality coffee and delicious treats in a welcoming environment. What began as a small neighborhood coffee shop has now grown into a beloved local hub for coffee lovers and foodies alike. Our team is dedicated to providing exceptional service and fostering a space where everyone feels at home.</p>
+        <p>Over the years, we have expanded our menu to include a wide variety of beverages and snacks, but we’ve always stayed true to our roots—serving the finest coffee sourced from around the world. Whether you’re a long-time customer or a first-time visitor, we invite you to experience the warmth of Java Cafe.</p>
+    </div>
+
+    <!-- What We Offer Section -->
+    <div class="mt-5">
+        <h2>What We Offer</h2>
+        <p>At Java Cafe, we take pride in offering a wide range of high-quality drinks and food items. Whether you're in the mood for a strong espresso, a creamy latte, or a refreshing iced tea, we’ve got something to satisfy your cravings. Our freshly baked pastries and savory sandwiches are made daily, using only the finest ingredients.</p>
+        
+        <h4>Coffee & Beverages</h4>
+        <ul>
+            <li>Espresso</li>
+            <li>Cappuccino</li>
+            <li>Latte</li>
+            <li>Cold Brew</li>
+            <li>Specialty Teas</li>
+            <li>Fresh Juices & Smoothies</li>
+        </ul>
+        
+        <h4>Pastries & Snacks</h4>
+        <ul>
+            <li>Freshly Baked Croissants</li>
+            <li>Assorted Muffins</li>
+            <li>Cookies and Brownies</li>
+            <li>Gourmet Sandwiches</li>
+            <li>Healthy Snack Options</li>
+        </ul>
+
+        <p>Our menu is constantly evolving, so be sure to check in regularly for new items and seasonal specials!</p>
+    </div>
+
+    <!-- Our Values Section -->
+    <div class="mt-5">
+        <h2>Our Values</h2>
+        <p>At Java Cafe, we believe in the following core values:</p>
+        <ul>
+            <li><strong>Quality</strong> – We use only the best beans and ingredients to create our drinks and dishes.</li>
+            <li><strong>Community</strong> – We strive to create a welcoming and inclusive space for everyone.</li>
+            <li><strong>Passion</strong> – We are passionate about coffee, food, and great service.</li>
+            <li><strong>Sustainability</strong> – We are committed to sustainability and minimizing our environmental footprint by using eco-friendly materials and practices.</li>
+        </ul>
+    </div>
+
+    <!-- Call to Action Section (Updated) -->
+    <div class="mt-5 text-center">
+        <h2>Check Out Our Menu!</h2>
+        <p>Hungry for something delicious? Explore our full menu to find your favorite dishes and drinks. We have something for everyone!</p>
+
+        <!-- Button to redirect to the Menu page -->
+        <div class="mt-4">
+            <a href="{% url 'menu' %}" class="btn btn-primary">View Menu</a>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
